@@ -1,0 +1,207 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Login Page Styles */
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Auction Page Styles */
+.auction-box {
+    width: 400px;
+    margin: 100px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auction-box h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+.auction-box p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.auction-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.auction-btn:hover {
+    background-color: #218838;
+}
+
+/* Live Bid Page Styles */
+.bid-box {
+    width: 500px;
+    margin: 80px auto;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.bid-box h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+.bid-box p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.bid-section {
+    margin-bottom: 40px;
+}
+
+.bid-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.bid-btn:hover {
+    background-color: #0056b3;
+}
+
+.back-section {
+    margin-top: 20px;
+}
+
+.back-btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+/* Live Bid Styles */
+.auction-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auction-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.auction-container h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+.auction-container p {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.auction-container button {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auction-container button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.auction-container button:disabled {
+    background-color: #ccc; /* Disabled button color */
+    cursor: not-allowed;
+}

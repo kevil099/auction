@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add CSS styles for the video background */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the entire background */
+        }
+
+        /* Style for the login form */
+        .login-box {
+            position: relative;
+            z-index: 1;
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-box input[type="text"], 
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background-color: #218838;
+        }
+
+        /* Style for the Create User button */
+        .login-box .create-user-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-box .create-user-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hidden Create User Form */
+        #createUserForm {
+            display: none;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background Container -->
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="videoplayback.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- Login Box -->
+    <div class="login-box">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Create User Button -->
+        <button class="create-user-btn" onclick="showCreateUserForm()">Create User</button>
+
+        <!-- Create User Form -->
+        <form id="createUserForm">
+            <h3>Create a New User</h3>
+            <input type="text" id="newUsername" placeholder="New Username" required>
+            <input type="password" id="newPassword" placeholder="New Password" required>
+            <button type="button" onclick="createUser()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Show Create User Form
+        function showCreateUserForm() {
+            const createUserForm = document.getElementById('createUserForm');
+            createUserForm.style.display = createUserForm.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Handle Login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            handleLogin(); // Call the login function manually
+        });
+
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check login credentials
+            if (username === 'admin' && password === 'admin123') {
+                localStorage.setItem('username', 'admin');
+                localStorage.setItem('loggedIn', true);
+                window.location.href = 'auction.html';
+            } else if (username === 'vansh' && password === 'vansh123') {
+                localStorage.setItem('username', 'vansh');
+                localStorage.setItem('loggedIn', true);
+                window.location.href = 'auction.html';
+            } else if (username === 'vatsal' && password === 'vatsal123') {
+                localStorage.setItem('username', 'vatsal');
+                localStorage.setItem('loggedIn', true);
+                window.location.href = 'auction.html';
+            } else {
+                alert('Invalid username or password!');
+            }
+        }
+
+        // Create New User
+        function createUser() {
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            if (newUsername && newPassword) {
+                // Store new user in localStorage
+                localStorage.setItem('username_' + newUsername, newUsername);
+                localStorage.setItem('password_' + newUsername, newPassword);
+                alert('User ' + newUsername + ' created successfully!');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+</body>
+</html>

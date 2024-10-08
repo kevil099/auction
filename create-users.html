@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Users</title>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
+    <script>
+        // Firebase config (use your actual project details)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Function to create users
+        function createUser(email, password) {
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                console.log("User created: ", userCredential.user.email);
+            })
+            .catch((error) => {
+                console.error("Error creating user: ", error.message);
+            });
+        }
+
+        // Create Vansh and Vatsal users
+        window.onload = function() {
+            createUser("vansh@example.com", "vansh123");
+            createUser("vatsal@example.com", "vatsal123");
+        }
+    </script>
+</head>
+<body>
+    <h1>Creating Users...</h1>
+    <p>Check the console for user creation logs.</p>
+</body>
+</html>
